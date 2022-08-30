@@ -92,7 +92,7 @@ local Tab = Window:NewTab("Teleport")
 local Section = Tab:NewSection("FUCKER GAME")
 
 Section:NewButton("Teleport To Spawn", "ButtonInfo", function()
-    Root.CFrame = game.Workspace.Rock.CFrame
+    Root.CFrame = CFrame.new(411.821747, 50.9606743, 142.299728, 0.999760926, 8.33363067e-09, -0.0218660682, -8.34566283e-09, 1, -4.5898893e-10, 0.0218660682, 6.41366016e-10, 0.999760926)
 end)
 
 Section:NewButton("Teleport To items", "ButtonInfo", function()
