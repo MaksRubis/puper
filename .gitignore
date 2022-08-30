@@ -1,41 +1,105 @@
-# Compiled Lua sources
-luac.out
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
+local Window = Library.CreateLib("FUCKER GAME", "Synapse")
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+local Tab = Window:NewTab("FUCKER GAME")
 
-# Precompiled Headers
-*.gch
-*.pch
+local Section = Tab:NewSection("FUCKER GAME")
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+_G.DDOS = true
+_G.FarmBoombox = true
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+plr = game.Players.LocalPlayer.Name
+Root = game.Players.LocalPlayer.Character.HumanoidRootPart
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+
+Section:NewToggle("DDOS", "ToggleInfo", function(state)
+    _G.DDOS = true
+    if state then
+        while _G.DDOS == true do
+            wait(0.5)
+            for i ,v in pairs(game:GetService("Workspace")["Vending Machine"]:GetDescendants()) do
+                if v.Name == "ClickDetector" then
+                    fireclickdetector(v, 1)
+                end
+            end
+        end
+    else
+        _G.DDOS = false
+    end
+end)
+
+
+Section:NewToggle("Boombox farm", "ToggleInfo", function(state)
+    _G.FarmBoombox = true
+    if state then
+        local plrhead = game.Players.LocalPlayer.Character.Head
+        while _G.FarmBoombox == true do
+            wait(0.01)
+            if game.Workspace:FindFirstChild("BoomBox") then
+                firetouchinterest(plrhead, game:GetService("Workspace").BoomBox.Handle, 0)
+            else
+                print('no finded')
+            end
+        end
+    else
+        _G.FarmBoombox = false
+    end
+end)
+
+Section:NewButton("Equip All Items", "ButtonInfo", function()
+    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+        v.Parent = game.Players.LocalPlayer.Character
+    end
+end)
+
+
+Section:NewButton("Transform to Floppa", "ButtonInfo", function()
+    game:GetService("Workspace")["Floppa Morph"].pad.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+    wait(0.1)
+    game:GetService("Workspace")["Floppa Morph"].pad.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + Vector3.new(0,200,0)
+end)
+
+
+
+Section:NewButton("Jail All - Need Item", "ButtonInfo", function()
+    
+
+
+
+for i,v in pairs(game.Players:GetChildren()) do
+    if v.Name ~= plr then
+        wait(0.1)
+        Root.CFrame = v.Character.HumanoidRootPart.CFrame
+        wait(0.1)
+        local args = {
+            [1] = game:GetService("Players")[v.Name].Character
+        }
+
+        game:GetService("Players").LocalPlayer.Backpack.PortableJustice.MouseClick:FireServer(unpack(args))
+    end
+end
+
+
+
+end)
+
+
+
+
+local Tab = Window:NewTab("Teleport")
+
+local Section = Tab:NewSection("FUCKER GAME")
+
+Section:NewButton("Teleport To Spawn", "ButtonInfo", function()
+    Root.CFrame = game.Workspace.Rock.CFrame
+end)
+
+Section:NewButton("Teleport To items", "ButtonInfo", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(879.55304, -21.4329491, -3215.19092, -0.0469532423, 4.98648056e-08, -0.998897076, -4.98539414e-08, 1, 5.22632533e-08, 0.998897076, 5.22528829e-08, -0.0469532423)
+end)
+
+
+
+
 
