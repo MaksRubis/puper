@@ -12,9 +12,6 @@ _G.FarmBoombox = true
 plr = game.Players.LocalPlayer.Name
 Root = game.Players.LocalPlayer.Character.HumanoidRootPart
 
-if game.Players.LocalPlayer.Name == "ReturnTime200" then
-    game.Players.LocalPlayer:Kick("YOU BLACKLISTED NIGER EBANII SUKIN SIN")
-end
 
 
 Section:NewToggle("DDOS", "ToggleInfo", function(state)
