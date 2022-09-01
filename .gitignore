@@ -150,7 +150,7 @@ for i,v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do
         v.Parent = game.Players.LocalPlayer.Character
         v.Remote:FireServer("Activate", plr.Position + Vector3.new(0,0,0))
         wait(0.01)
-        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.CFrame + Vector3.new(0,0,math.random(3,30))
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.CFrame + Vector3.new(math.random(3,30),0,math.random(3,30))
         game.Players.LocalPlayer.Character.ModernRocketLauncher.Parent = game.Players.LocalPlayer.Backpack
     end
 end
