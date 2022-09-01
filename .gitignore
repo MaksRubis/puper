@@ -113,6 +113,28 @@ local Section = Tab:NewSection("Section Name")
 _G.Start = false
 
 
+Section:NewButton("Teleport Buttons", "ButtonInfo", function()
+
+for i,v in pairs(game.Workspace:GetDescendants()) do
+    if v.Name == "Button_CaptainFlintlock" then
+        v.Position = game.Players.LocalPlayer.Character.HumanoidRootPart.Position + Vector3.new(0,0,math.random(5, 20))
+        wait(0.1)
+    end
+end
+end)
+
+--ModernRocketLauncher
+
+Section:NewButton("Collect All Launcher", "ButtonInfo", function()
+
+local head = game.Players.LocalPlayer.Character.Head
+for i,v in pairs(game.Workspace:GetDescendants()) do
+    if v.Name == "ModernRocketLauncher" then
+        firetouchinterest(head,v.Handle, 0)
+    end
+end
+end)
+
 
 Section:NewTextBox("Nickname Enemy", "TextboxInfo", function(txt)
 	enemy = txt
