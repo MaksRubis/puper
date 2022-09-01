@@ -106,4 +106,35 @@ end)
 
 
 
+local Tab = Window:NewTab("RocketLauncher")
+
+local Section = Tab:NewSection("Section Name")
+
+_G.Start = false
+
+
+
+Section:NewTextBox("Nickname Enemy", "TextboxInfo", function(txt)
+	enemy = txt
+    Name:UpdateLabel("NickName: " .. enemy)
+end)
+
+Section:NewKeybind("Start", "KeybindInfo", Enum.KeyCode.F, function()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do
+    if v.Name == "ModernRocketLauncher" then
+        local Nick = enemy
+        plr = game.Players[Nick].Character.HumanoidRootPart
+        print(Nick)
+        v.Parent = game.Players.LocalPlayer.Character
+        v.Remote:FireServer("Activate", plr.Position + Vector3.new(0,0,0))
+        wait(0.01)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = plr.CFrame + Vector3.new(0,0,math.random(3,30))
+        game.Players.LocalPlayer.Character.ModernRocketLauncher.Parent = game.Players.LocalPlayer.Backpack
+    end
+end
+end)
+
+
+
+Name = Section:NewLabel("NickName:")
 
