@@ -157,10 +157,6 @@ end
 end)
 
 
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
-
-local Window = Library.CreateLib("FUCKER GAME", "Synapse")
-
 local Tab = Window:NewTab("FUCKER GAME")
 
 local Section = Tab:NewSection("FUCKER GAME")
