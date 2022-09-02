@@ -156,12 +156,10 @@ for i,v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do
 end
 end)
 
-
-local Tab = Window:NewTab("FUCKER GAME")
-
-local Section = Tab:NewSection("FUCKER GAME")
+Name = Section:NewLabel("NickName:")
 
 
+Section:NewLabel("Mouse --")
 
 Section:NewKeybind("Start Rocket Mouse", "KeybindInfo", Enum.KeyCode.G, function()
 for i,v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do
@@ -174,8 +172,4 @@ for i,v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do
     end
 end
 end)
-
-
-
-Name = Section:NewLabel("NickName:")
 
