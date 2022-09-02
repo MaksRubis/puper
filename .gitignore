@@ -157,6 +157,29 @@ end
 end)
 
 
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("FUCKER GAME", "Synapse")
+
+local Tab = Window:NewTab("FUCKER GAME")
+
+local Section = Tab:NewSection("FUCKER GAME")
+
+
+
+Section:NewKeybind("Start Rocket Mouse", "KeybindInfo", Enum.KeyCode.G, function()
+for i,v in pairs(game.Players.LocalPlayer.Backpack:GetDescendants()) do
+    if v.Name == "ModernRocketLauncher" then
+        local Mouse = game.Players.LocalPlayer:GetMouse()
+        v.Parent = game.Players.LocalPlayer.Character
+        v.Remote:FireServer("Activate", Mouse.hit.Position  + Vector3.new(0,0,0))
+        wait(0.01)
+        game.Players.LocalPlayer.Character.ModernRocketLauncher.Parent = game.Players.LocalPlayer.Backpack
+    end
+end
+end)
+
+
 
 Name = Section:NewLabel("NickName:")
 
