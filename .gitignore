@@ -22,7 +22,7 @@ Section:NewToggle("DDOS", "ToggleInfo", function(state)
     if state then
         while _G.DDOS == true do
             wait(0.5)
-            for i ,v in pairs(game:GetService("Workspace")["Vending Machine"]:GetDescendants()) do
+            for i ,v in pairs(game:GetService("Workspace")game:GetService("Workspace")["Epic Soda Machine by KnightlyKnave"]:GetDescendants()) do
                 if v.Name == "ClickDetector" then
                     fireclickdetector(v, 1)
                 end
