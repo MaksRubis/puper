@@ -12,7 +12,7 @@ for i,v in pairs(b) do
             Style = 2,
             SizeX = 500,
             SizeY = 350,
-            Theme = "Light",
+            Theme = "Jester",
             ColorOverrides = {
                 MainFrame = Color3.fromRGB(235,235,235)
             }
