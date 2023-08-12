@@ -838,7 +838,7 @@
                                             local light = Instance.new("Highlight")
 
                                             light.Parent = v
-                                            light.FillColor = Color3.fromRGB(math.random(0,255),math.random(0,255),math.random(0,255))
+                                            light.FillColor = Color3.fromRGB(252, 248, 0)
                                             light.FillTransparency = 0.4
                                          end
                                         
