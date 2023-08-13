@@ -142,15 +142,6 @@
             380000
         }
 
-        local ExclusPrice ={
-            99999999999999,
-            99999999999999,
-            99999999999999,
-            99999999999999,
-            99999999999999,
-            99999999999999
-        }
-
 
         local SportMasterList ={
             "Чёрная Спортивная Джинсовка 'Puma'",
@@ -277,13 +268,10 @@
         }
 
         local ExclusiveList ={
-            "Рюкзак 'Tiger'",
-            "Оранжевая Зип-Худи 'BAPE STA'",
-            "Коричневая Футболка PARIS 'Maison Margiela'",
-            "Кожаная Куртка 'Антона Чигура'",
-            "Штаны 'Антона Чигура'",
-            "Черный Рюкзак 'BAPE'"
-
+            "rbxassetid://5773140178",
+            "rbxassetid://7798302568",
+            "rbxassetid://14140880513",
+            "rbxassetid://14143469229"
         }
 
 
@@ -827,22 +815,13 @@
                     while _G.Exclus == true do
                         task.wait(1)
 
-                        for i,v in pairs(workspace.World.Debris:FindFirstChild("Stores"):GetDescendants()) do
-                            if v:FindFirstChildOfClass("ProximityPrompt") then
-                                if table.find(ExclusiveList,v.ProximityPrompt.ObjectText) then
-                                    local Price = string.gsub(v.ProximityPrompt.ActionText, "(%D)", "")
-                                    local name = v.ProximityPrompt.ObjectText
-                                    local index = table.find(ExclusiveList,name)
-                                    if tonumber(Price) < ExclusPrice[index] then
-                                        if not v:FindFirstChild("Highlight") then
-                                            local light = Instance.new("Highlight")
+                       for i,v in pairs(workspace.World.Debris:FindFirstChild("Stores"):GetDescendants()) do
+                            if v:FindFirstChild("Clothing") then 
+                                if table.find(list,v.Clothing.Template.Texture) then
+                                    local a = Instance.new('Highlight')
 
-                                            light.Parent = v
-                                            light.FillColor = Color3.fromRGB(252, 248, 0)
-                                            light.FillTransparency = 0.4
-                                         end
-                                        
-                                    end
+                                    a.Parent = v
+                                    a.FillColor = Color3.fromRGB(255,215,0)
                                 end
                             end
                         end
