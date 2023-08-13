@@ -473,7 +473,7 @@
                 if Value then
                     _G.AutoSell = true
                     while _G.AutoSell == true do
-                        wait(0.1)
+                        wait(0.05)
                         for i,v in pairs(workspace.World.Debris.Stores:GetChildren()) do
           
                             if v:FindFirstChild("BoundingBox") then
